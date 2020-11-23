@@ -1,0 +1,6 @@
+<%= simple_form_for( [@user, @skill] ) do |f| %>
+  <%= f.input :name, label: 'Describe your skill' %>
+  <%= f.input :description, label: 'Describe your skill.' %>
+  <%= f.input :price_per_day, label: 'Specifiy daily rate.' %>
+  <%= f.button :submit %>
+<% end %>
