@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_11_23_115123) do
+ActiveRecord::Schema.define(version: 2020_11_23_133454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "date_start"
+    t.date "date_end"
+    t.integer "price"
+    t.bigint "skill_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["skill_id"], name: "index_bookings_on_skill_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
-  # TODO: Table needs to be referenced with the User-tabel
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -36,5 +45,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_115123) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
- end
+  end
+
+  add_foreign_key "bookings", "skills"
+  add_foreign_key "bookings", "users"
 end
