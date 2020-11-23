@@ -1,1 +1,41 @@
 // Specific CSS for your home-page
+body {
+  margin: 0;
+  h1{
+  color: white;
+  }
+
+}
+.banner{
+  height:40vh;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  padding: 133px 0;
+}
+
+form {
+  vertical-align: middle;
+  color: white;
+  display: flex;
+  justify-content: center;
+  button{
+  height: 30%;
+  margin:0 10px;
+  }
+  input {
+    width: 70%;
+  }
+}
+
+
+.cardholder {
+  margin-top:10px;
+  display: flex;
+}
+
+.card{
+  height: 40%;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
