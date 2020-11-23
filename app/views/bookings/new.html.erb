@@ -1,10 +1,12 @@
 <div class="container">
-  <h1>Create a new booking</h1>
-    <%= simple_form_for [@user,@booking] do |f| %>
+  <div class="row">
+    <div class="col-12">
+      <%= simple_form_for [@user,@booking] do |f| %>
       <%= f.input :date_start, as: :date %>
       <%= f.input :date_end, as: :date %>
       <%= f.input :price %>
       <%= f.submit "New booking", class: "btn btn-primary" %>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
