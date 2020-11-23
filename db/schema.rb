@@ -12,7 +12,6 @@
 
 
 ActiveRecord::Schema.define(version: 2020_11_23_115123) do
-ActiveRecord::Schema.define(version: 2020_11_23_113511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_113511) do
     t.integer "price_per_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
