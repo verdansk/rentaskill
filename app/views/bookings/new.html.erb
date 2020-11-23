@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <%= simple_form_for [@user,@booking] do |f| %>
+      <%= simple_form_for([@skill,@booking]) do |f| %>
       <%= f.input :date_start, as: :date %>
       <%= f.input :date_end, as: :date %>
       <%= f.input :price %>

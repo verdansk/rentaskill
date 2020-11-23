@@ -13,7 +13,7 @@ body {
   padding: 133px 0;
 }
 
-form {
+#mainSearch {
   vertical-align: middle;
   color: white;
   display: flex;
@@ -21,9 +21,6 @@ form {
   button{
   height: 30%;
   margin:0 10px;
-  }
-  input {
-    width: 70%;
   }
 }
 
