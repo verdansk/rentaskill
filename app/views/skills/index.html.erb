@@ -1,0 +1,8 @@
+<!-- Todo Add HTML regarding Browse Skill -->
+
+<h1>All Skills</h1>
+  <% @skills.each do |skill| %>
+    <ul>
+      <li><%= link_to skill.name, skill_path(skill) %></li>
+    </ul>
+  <% end %>
