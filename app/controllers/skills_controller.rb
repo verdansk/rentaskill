@@ -23,6 +23,15 @@ class SkillsController < ApplicationController
     end
   end
 
+  def search
+    @users = []
+    @skills = Skill.all.where("name = ?", "#{params["search"]}")
+    @skills.each do |skill|
+      @users << User.find(skill.user_id)
+    end
+    render :index
+  end
+
   private
 
   def set_user_id
