@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6"><%= @user.email %></div>
+    <div class="col-6">
+      <ul>
+        <% @user.skills.each do |skill| %>
+          <li> <%= skill.name %> </li> <%= link_to "Book", new_skill_booking_path(skill) %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul>
+        <% if @user.id == current_user.id %>
+        <% @bookings.each do |booking| %>
+          <li> <%= "Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}"%> </li>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
