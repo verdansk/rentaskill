@@ -1,0 +1,34 @@
+.skill-item{
+      display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 50px 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.skill-item form{
+  display: flex;
+    align-items: flex-end;
+}
+
+.skill-item form .form-group{
+  margin-bottom: 0;
+}
+
+.book-skill-btn{
+    padding: 5px 10px;
+    margin: 0px 5px;
+
+}
+.skill-title{
+  margin-right: 30px;
+}
+.user_info{
+      margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
