@@ -16,7 +16,7 @@
               <% @user.skills.each do |skill| %>
               <div class="skill-item col-12">
                 <div class="skill-title"><%= skill.name %></div>
-                <% if @user == current_user %>
+                <% if @user != current_user %>
                 <%#= link_to "Book", new_skill_booking_path(skill) %>
                 <%= render "bookings/form", skill: skill, booking: @new_booking %>
                 <% end %>
