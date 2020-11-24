@@ -1,8 +1,27 @@
-<!-- Todo Add HTML regarding Browse Skill -->
+<div class="container-fluid">
 
-<h1>All Skills</h1>
-  <% @skills.each do |skill| %>
-    <ul>
-      <li><%= link_to skill.name, skill_path(skill) %></li>
-    </ul>
-  <% end %>
+<h1 class="text-left mt-5 ml-5">These people know  <i class="fab fa-js"></i> <i class="fas fa-gem"></i> <i class="fab fa-html5"></i> <%# @skill %> :</h1>
+<div class="grid-map">
+
+<ul class="card-grid">
+  <%# @skills.each do |user| %>
+  <li>
+    <div class="card">
+      <img src="https://picsum.photos/200" class="card-img-top" alt="user-img">
+      <div class="card-body">
+        <h3> Name of person with skills <%#= @user.name %></h3>
+        <p> <strong>Price per day:</strong>  € <%#= @user.skill.price_per_day  %> </p>
+      </div>
+    </div>
+  </li>
+  <%# end %>
+</ul>
+
+<div id="map">
+  <img src="https://images.unsplash.com/photo-1532154066703-3973764c81fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
+</div>
+
+</div>
+
+</div>
+
