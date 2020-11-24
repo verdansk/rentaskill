@@ -1,6 +1,8 @@
-<%= simple_form_for(@skill ) do |f| %>
-  <%= f.input :name, label: 'Describe your skill' %>
-  <%= f.input :description, label: 'Describe your skill.' %>
+<%= simple_form_for(@skill) do |f| %>
+  <%= f.input :name, label: 'Select your skills' %>
+  <%= f.input :description, label: 'Describe your skills.' %>
+  <%= f.input :description, collection: ["front-end", "back-end", "full-stack", "data-science", "design", "product management"],
+                            label: "Select the category that best describes your skills" %>
   <%= f.input :price_per_day, label: 'Specifiy daily rate.' %>
   <%= f.button :submit %>
 <% end %>
