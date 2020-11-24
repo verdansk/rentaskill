@@ -8,11 +8,20 @@
 
 
 # Create 10 different skills, with a name, description (lorem) and price.
-10.times do
+100.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: rand(100000..999999),
+    )
+  user.save
+end
+
+100.times do
   skill = Skill.new(
-    name: Faker::Company.profession,
+    name: Faker::ProgrammingLanguage.name,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: rand(80..120),
+    user_id: User.all.sample.id
     )
-  skill.save!
+  skill.save
 end

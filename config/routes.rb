@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :skills do
     resources :bookings, only: [:new,:create]
+    collection do
+      get "search"
+    end
   end
   resources :users, only: [:show,:index]
   get "skills/category/:category", to: "skills#category", as: :skills_category

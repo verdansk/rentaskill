@@ -1,27 +1,27 @@
+
 <div class="container-fluid">
 
-<h1 class="text-left mt-5 ml-5">These people know  <i class="fab fa-js"></i> <i class="fas fa-gem"></i> <i class="fab fa-html5"></i> <%# @skill %> :</h1>
-<div class="grid-map">
+  <h1 class="mt-5 ml-5 pl-4">These people know <i class="fab fa-js"></i> <i class="fas fa-gem"></i> <i class="fab fa-html5"></i> <%# @skill %> :</h1>
+  <div class="grid-map">
 
-<ul class="card-grid">
-  <%# @skills.each do |user| %>
-  <li>
-    <div class="card">
-      <img src="https://picsum.photos/200" class="card-img-top" alt="user-img">
-      <div class="card-body">
-        <h3> Name of person with skills <%#= @user.name %></h3>
-        <p> <strong>Price per day:</strong>  € <%#= @user.skill.price_per_day  %> </p>
-      </div>
+    <ul class="card-grid">
+      <%# @skills.each do |user| %>
+      <li>
+        <div class="card">
+          <img src="https://picsum.photos/200" class="card-img-top" alt="user-img">
+          <div class="card-body">
+            <h3> Name of person with skills <%#= @user.name %></h3>
+            <p> <strong>Price per day:</strong>  € <%#= @user.skill.price_per_day  %> </p>
+          </div>
+        </div>
+      </li>
+      <%# end %>
+    </ul>
+
+    <div id="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155959.8924297995!2d4.763878108967292!3d52.354582834316005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600fd4cb7c0af8d!2sAmsterdam!5e0!3m2!1snl!2snl!4v1606230408630!5m2!1snl!2snl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
-  </li>
-  <%# end %>
-</ul>
 
-<div id="map">
-  <img src="https://images.unsplash.com/photo-1532154066703-3973764c81fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
-</div>
+  </div>
 
 </div>
-
-</div>
-
