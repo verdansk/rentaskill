@@ -1,0 +1,20 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.grid-map {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
