@@ -2,7 +2,7 @@
 body {
   margin: 0;
   h1{
-  color: white;
+  color: black;
   }
 
 }
@@ -21,13 +21,35 @@ body {
 
 
 .cardholder {
-  margin-top:10px;
-  display: flex;
+  margin-top:20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
-.card{
-  height: 40%;
-  margin: 10px;
+.card-home {
+  height: 100%;
   border-radius: 10px;
-  overflow: hidden;
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0px 0px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-link {
+  color: black;
+}
+
+.card-link:hover {
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+  color: black;
+  border-radius: 10px;
+}
+
+.card-call-out {
+  font-size: 3em;
+  text-align: center;
+  margin: 20px 0px;
 }

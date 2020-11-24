@@ -17,11 +17,12 @@ class SkillsController < ApplicationController
     @user = current_user
     @skill.user = @user
     if @skill.save
-      redirect_to skills_path
+      redirect_to user_path(@user)
     else
       render :new
     end
   end
+
 
   def search
     @users = []
@@ -31,6 +32,16 @@ class SkillsController < ApplicationController
     end
     render :index
   end
+  
+  def category
+    @category = params[:category]
+    @users = []
+    @skills = Skill.all.where("category ILIKE ?", "%#{params[:category]}%")
+    @skills.each do |skill|
+      @users << User.find(skill.user_id)
+     end
+    # render :index
+  end
 
   private
 
@@ -39,6 +50,6 @@ class SkillsController < ApplicationController
   end
 
   def strong_params_skills
-    params.require(:skill).permit(:name, :description, :price_per_day)
+    params.require(:skill).permit(:name, :description, :price_per_day, :category)
   end
 end
