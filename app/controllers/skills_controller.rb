@@ -9,13 +9,12 @@ class SkillsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @skill = Skill.new
   end
 
   def create
-    @user = User.find(params[:user_id])
     @skill = Skill.new(strong_params_skills)
+    @user = current_user
     @skill.user = @user
     if @skill.save
       redirect_to skills_path
