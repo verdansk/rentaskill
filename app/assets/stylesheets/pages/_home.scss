@@ -7,22 +7,17 @@ body {
 
 }
 .banner{
+  color: #DB683B;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height:40vh;
   background-image: url("bg.jpg");
   background-size: cover;
-  padding: 133px 0;
 }
 
-#mainSearch {
-  vertical-align: middle;
-  color: white;
-  display: flex;
-  justify-content: center;
-  button{
-  height: 30%;
-  margin:0 10px;
-  }
-}
+
 
 
 .cardholder {
