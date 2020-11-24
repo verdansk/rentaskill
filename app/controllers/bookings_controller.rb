@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @new_skill = Skill.new
     @booking = Booking.new
   end
 

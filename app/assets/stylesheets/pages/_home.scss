@@ -6,7 +6,7 @@ body {
   }
 
 }
-.banner{
+.banner {
   color: #DB683B;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,10 @@ body {
   background-size: cover;
 }
 
-
+// width of the search bar on the homepage
+#mainSelect {
+  width: 25%;
+}
 
 
 .cardholder {
