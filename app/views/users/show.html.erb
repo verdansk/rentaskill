@@ -30,12 +30,12 @@
         </div>
       </div>
       <% if @user == current_user %>
-      <div class="bookings">
-        <ul>
+      <div class="bookings col-12">
+        <div class="bookings-item">
           <% @bookings.each do |booking| %>
-          <li> <%= "Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}"%> </li>
+          <div> <%= "Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}"%> </div>
           <% end %>
-        </ul>
+        </div>
       </div>
       <% end %>
     </div>
