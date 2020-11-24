@@ -17,4 +17,9 @@ li {
 .card {
   display: grid;
   grid-template-columns: 1fr 2fr;
+ &:hover {
+  box-shadow: 1px 1px 3px grey;
+  transition:  box-shadow .2s ease-out;
+  zoom: 1.005;
+ }
 }
