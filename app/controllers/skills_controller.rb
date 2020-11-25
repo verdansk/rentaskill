@@ -32,7 +32,7 @@ class SkillsController < ApplicationController
     end
     render :index
   end
-  
+
   def category
     @category = params[:category]
     @users = []

@@ -1,10 +1,11 @@
   <div class="banner">
-  <h2>Select skill:</h2>
-   <select id="mainSelect" class="js-example-basic-single" name="search">
-    <% Skill.all.each do |s| %>
-      <option value="<%= s.id %>" ><%= s.name %></option> %>
-    <% end %>
-  </select>
+  <h2>Search for a skill</h2>
+    <form action="/skills/search" method="GET" name="search">
+      <div class="form-group">
+        <input type="text" id="mainSearch" name="search" placeholder="Enter skill...">
+      </div>
+      <button type="submit" class="btn btn-warning">Search now!</button>
+    </form>
   </div>
 
 <div class="container">
