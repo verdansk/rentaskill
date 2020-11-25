@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
 body {
   margin: 0;
   h1{
@@ -15,6 +17,14 @@ body {
   height:40vh;
   background-image: url("bg.jpg");
   background-size: cover;
+
+  .form-group{
+    display: inline-block;
+  }
+
+  #search{
+    font-family: 'Nanum Gothic Coding', monospace;
+  }
 }
 
 // width of the search bar on the homepage
@@ -43,12 +53,26 @@ body {
 
 .card-link {
   color: black;
+  margin-left: 0px;
+}
+
+.card-link {
+  color: black;
+  margin-left: 0px;
 }
 
 .card-link:hover {
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
   color: black;
   border-radius: 10px;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 .card-call-out {

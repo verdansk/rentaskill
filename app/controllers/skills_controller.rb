@@ -33,7 +33,7 @@ class SkillsController < ApplicationController
 
   def search
     @users = []
-    @skills = Skill.all.where("name = ?", "#{params["search"]}")
+    @skills = Skill.all.where("lower(name) LIKE ?", "%#{params["search"].downcase}%")
     @skills.each do |skill|
       @users << User.find(skill.user_id)
     end
@@ -50,11 +50,18 @@ class SkillsController < ApplicationController
   def category
     @category = params[:category]
     @users = []
-
-    @skills = Skill.all.where("category ILIKE ?", "%#{params[:category]}%")
+    @skills = Skill.all.where("category = ?", "#{params[:category]}")
     @skills.each do |skill|
       @users << User.find(skill.user_id)
     end
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+      }
+    end
+    @users.uniq!
     # render :index
   end
 
@@ -65,6 +72,6 @@ class SkillsController < ApplicationController
   end
 
   def strong_params_skills
-    params.require(:skill).permit(:name, :description, :price_per_day, :category)
+    params.require(:skill).permit(:name, :price_per_day, :category)
   end
 end
