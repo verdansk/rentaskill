@@ -12,7 +12,7 @@
             <svg data-jdenticon-value="<%= user.id %>" class="avatar-user" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
             <div class="card-body">
               <h3><%= user.name %></h3>
-              <p><strong>Price per day:</strong>€ <%= user.skills.group_by(&:price_per_day).min[0]   %></p>
+              <p><strong>Price per day:</strong> €<%= user.skills.group_by(&:price_per_day).min[0]  %></p>
             </div>
           </div>
           <% end %>
