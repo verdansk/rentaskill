@@ -2,42 +2,37 @@
   <div class="row">
     <div class="col-3">
       <div class="user_info">
-        <svg data-jdenticon-value="<%= current_user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
-        <div><%= @user.name %></div>
-        <div><%= link_to "Add skill", new_skill_path %></div>
-      </div>
-
-    </div>
-    <div class="col-9">
-      <div class="skills">
-        <div class="row">
-          <div class="col-12">
-            <div class="row">
-              <% @user.skills.each do |skill| %>
-              <div class="skill-item col-12">
-                <div class="skill-title"><%= skill.name %></div>
-                <% if @user != current_user %>
-                <%#= link_to "Book", new_skill_booking_path(skill) %>
-                <%= render "bookings/form", skill: skill, booking: @new_booking %>
-                <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-          <div class="col-6">
-
-          </div>
-        </div>
-      </div>
-      <% if @user == current_user %>
-      <div class="bookings">
-        <ul>
-          <% @bookings.each do |booking| %>
-          <li> <%= "Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}"%> </li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
+      <svg data-jdenticon-value="<%= current_user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
+      <div><%= @user.name %></div>
+      <div><%= link_to "Add skill", new_skill_path %></div>
     </div>
   </div>
+  <div class="col-9">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <% @user.skills.each do |skill| %>
+            <div class="skill-item col-12">
+              <div class="skill-title"><%= skill.name %></div>
+              <% if @user != current_user %>
+              <%#= link_to "Book", new_skill_booking_path(skill) %>
+              <%= render "bookings/form", skill: skill, booking: @new_booking %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <% if @user == current_user %>
+        <div class="col-12 title-bookings">Your bookings</div>
+        <div class="bookings col-12">
+          <% @bookings.each do |booking| %>
+          <div class="bookings-item">
+            <div> <%= "Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}"%> </div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
 </div>
