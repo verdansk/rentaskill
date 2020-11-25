@@ -9,6 +9,10 @@
   grid-template-columns: 1fr;
 }
 
+ .card-grid li {
+    list-style: none;
+  }
+
 .card-skill-link {
   list-style: none;
   a {
