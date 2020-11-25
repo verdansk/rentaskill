@@ -33,7 +33,7 @@ class SkillsController < ApplicationController
 
   def search
     @users = []
-    @skills = Skill.all.where("lower(name) = ?", "#{params["search"].downcase}")
+    @skills = Skill.all.where("lower(name) LIKE ?", "%#{params["search"].downcase}%")
     @skills.each do |skill|
       @users << User.find(skill.user_id)
     end
