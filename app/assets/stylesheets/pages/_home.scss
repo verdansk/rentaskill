@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
 body {
   margin: 0;
   h1{
@@ -18,6 +20,10 @@ body {
 
   .form-group{
     display: inline-block;
+  }
+
+  #search{
+    font-family: 'Nanum Gothic Coding', monospace;
   }
 }
 
