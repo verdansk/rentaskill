@@ -32,14 +32,14 @@ class SkillsController < ApplicationController
     end
     render :index
   end
-  
+
   def category
     @category = params[:category]
     @users = []
     @skills = Skill.all.where("category ILIKE ?", "%#{params[:category]}%")
     @skills.each do |skill|
       @users << User.find(skill.user_id)
-     end
+    end
     # render :index
   end
 

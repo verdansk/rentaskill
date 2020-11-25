@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @new_skill = Skill.new
     @booking = Booking.new
   end
 
@@ -14,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @booking.skill = @skill
     if @booking.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
