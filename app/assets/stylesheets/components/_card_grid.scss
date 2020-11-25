@@ -1,7 +1,6 @@
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 10px;
 }
 
 li {
@@ -11,15 +10,21 @@ li {
 .grid-map {
   display: flex;
   justify-content: space-around;
+   align-items: flex-start;
   margin-top: 20px;
 }
 
 .card {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  margin-bottom: 10px;
  &:hover {
   box-shadow: 1px 1px 3px grey;
   transition:  box-shadow .2s ease-out;
   zoom: 1.005;
  }
+}
+
+.link-black {
+  color: black;
 }

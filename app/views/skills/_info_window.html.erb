@@ -1,7 +1,8 @@
 <%= link_to user_path(user) do %>
 <div>
   <h2><%= user.name %></h2>
-  <p><%= user.address %></p>
+  <p> Address :<%= user.address %></p>
+  <p> Price from : <%= user.skills.group_by(&:price_per_day).min[0]  %></p>
 </div>
 
 <% end %>
