@@ -47,12 +47,26 @@ body {
 
 .card-link {
   color: black;
+  margin-left: 0px;
+}
+
+.card-link {
+  color: black;
+  margin-left: 0px;
 }
 
 .card-link:hover {
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
   color: black;
   border-radius: 10px;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 .card-call-out {
