@@ -7,7 +7,6 @@
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 10px;
 }
 
 .card-skill-link {
@@ -19,6 +18,12 @@
   }
 }
 
+.grid-map {
+  display: flex;
+  justify-content: space-around;
+   align-items: flex-start;
+  margin-top: 20px;
+
 .card-skill-link a:hover {
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
   color: black;
@@ -26,11 +31,25 @@
   text-decoration: none;
   // transition: box-shadow .2s ease-out;
   // zoom: 1.005;
+
 }
 
 .card {
   display: grid;
   grid-template-columns: 1fr 2fr;
+
+  margin-bottom: 10px;
+ &:hover {
+  box-shadow: 1px 1px 3px grey;
+  transition:  box-shadow .2s ease-out;
+  zoom: 1.005;
+ }
+}
+
+.link-black {
+  color: black;
+}
+
   border-radius: 10px;
 }
 
@@ -39,6 +58,3 @@
   object-fit: cover;
   height: 175px;
 }
-
-
-
