@@ -2,11 +2,19 @@
   <div class="row">
     <div class="col-3">
       <div class="user_info">
-      <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
+      <%#= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if current_user.photo.attached? %>
+        <div class="profile-img" style="background-image: url(<%= cl_image_path current_user.photo.key, :gravity=>"face", :width=>418, :crop=>"thumb" %>);">
+        </div>
+      <% else %>
+        <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
+      <% end %>
       <div><%= @user.name %></div>
+
       <% if @user == current_user %>
       <div><%= link_to "Add skill", new_skill_path %></div>
       <% end %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </div>
   </div>
   <div class="col-9">
