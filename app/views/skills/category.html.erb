@@ -12,7 +12,7 @@
             <img src="https://picsum.photos/200" class="card-img-right" alt="user-img">
             <div class="card-body">
               <h3><%= user.name %></h3>
-              <p><strong>Price per day:</strong>€<%#= raise user.skill.price_per_day  %></p>
+              <p><strong>Price per day:</strong> €<%= user.skills.group_by(&:price_per_day).min[0]  %></p>
             </div>
           </div>
           <% end %>
