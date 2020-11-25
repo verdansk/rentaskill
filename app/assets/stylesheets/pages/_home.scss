@@ -15,6 +15,10 @@ body {
   height:40vh;
   background-image: url("bg.jpg");
   background-size: cover;
+
+  .form-group{
+    display: inline-block;
+  }
 }
 
 // width of the search bar on the homepage
