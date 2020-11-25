@@ -7,6 +7,7 @@
 
 cities = ["Amsterdam", "Rotterdam", "Den Haag", "Apeldoorn", "Utrecht"]
 
+
 25.times do
   user = User.create!(
     name: Faker::Name.name,
@@ -93,3 +94,4 @@ puts "created 10 design skills!"
 end
 
 puts "created 10 product management skills!"
+
