@@ -3,7 +3,6 @@
 ////////////////////////////
 
 // your custome placeholder goes here!
-console.log('asdfasdf')
 var ph = "Enter a skill...",
   searchBar = $('#mainSearch'),
   // placeholder loop counter
@@ -54,3 +53,5 @@ $('.submit').click(function(e){
   e.preventDefault();
   placeholder();
 });
+
+export { printLetter };
