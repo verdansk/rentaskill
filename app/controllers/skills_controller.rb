@@ -65,6 +65,12 @@ class SkillsController < ApplicationController
     # render :index
   end
 
+  def destroy
+    @skill = Skill.find(params[:id])
+    @skill.destroy
+    redirect_to user_path(@skill.user)
+  end
+
   private
 
   def set_user_id

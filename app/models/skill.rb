@@ -1,6 +1,6 @@
 class Skill < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   validates :name, presence: true, uniqueness: { scope: :user_id }
   validates :price_per_day, presence: true, numericality: true
