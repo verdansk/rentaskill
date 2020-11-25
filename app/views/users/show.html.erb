@@ -12,7 +12,7 @@
         <div class="col-12">
           <div class="row">
             <% @user.skills.each do |skill| %>
-            <div class="skill-item col-12">
+            <div class="skill-item justify-content-between <%=@user != current_user ? 'col-12' : 'col-4' %>">
               <div class="skill-title"><%= skill.name %></div>
               <% if @user != current_user %>
               <%#= link_to "Book", new_skill_booking_path(skill) %>
