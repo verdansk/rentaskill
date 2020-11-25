@@ -3,6 +3,14 @@ class SkillsController < ApplicationController
 
   def index
     @skills = Skill.all
+    @users = User.all
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+      }
+    end
   end
 
   def show
@@ -29,12 +37,20 @@ class SkillsController < ApplicationController
     @skills.each do |skill|
       @users << User.find(skill.user_id)
     end
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+      }
+    end
     render :index
   end
 
   def category
     @category = params[:category]
     @users = []
+
     @skills = Skill.all.where("category ILIKE ?", "%#{params[:category]}%")
     @skills.each do |skill|
       @users << User.find(skill.user_id)
