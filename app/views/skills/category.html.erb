@@ -1,6 +1,32 @@
-<h1> <%= @category %> </h1>
-  <% @users.each do |user| %>
-  <ul>
-    <li> <%= user.email %></li>
-  </ul>
-  <% end %>
+<div class="container-fluid">
+
+  <h1 class="mt-5 ml-5 pl-4">These folks ace <%= @category %></h1>
+  <div class="grid-map">
+
+    <ul class="card-grid">
+      <% @users.each do |user| %>
+
+        <li class="card-skill-link">
+          <%= link_to user_path(user) do %>
+          <div class="card">
+            <img src="https://picsum.photos/200" class="card-img-right" alt="user-img">
+            <div class="card-body">
+              <h3><%= user.name %></h3>
+              <p><strong>Price per day:</strong>€<%#= raise user.skill.price_per_day  %></p>
+            </div>
+          </div>
+          <% end %>
+        </li>
+
+      <% end %>
+    </ul>
+
+    <div id="map"
+     style="width: 50%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  </div>
+
+</div>
