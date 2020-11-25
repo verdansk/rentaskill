@@ -55,6 +55,7 @@ class SkillsController < ApplicationController
     @skills.each do |skill|
       @users << User.find(skill.user_id)
     end
+    @users.uniq!
     # render :index
   end
 
@@ -65,6 +66,6 @@ class SkillsController < ApplicationController
   end
 
   def strong_params_skills
-    params.require(:skill).permit(:name, :description, :price_per_day, :category)
+    params.require(:skill).permit(:name, :price_per_day, :category)
   end
 end
