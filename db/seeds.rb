@@ -1,30 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
-# Create 10 different skills, with a name, description (lorem) and price.
-25.times do
-  user = User.create!(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password: 123456
-    )
-  user.save!
-end
-
-puts "created 10 users!"
-
 # frontEnd = ["html", "css", "javascript", "react", "Jquery", "vue", "swift"]
 # backEnd = ["ruby", "php", "python", "java"]
 # fullStack = ["ruby", "php", "python", "java", "html", "css", "javascript"]
 # dataScience = ["python", "sql", "R", "scala"]
 # design = ["figma", "invision", "Adobe" ]
 # productManagament = ["scrum", "agile", "kanban"]
+
+cities = ["Amsterdam", "Rotterdam", "Den Haag", "Apeldoorn", "Utrecht"]
+
+25.times do
+  user = User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 123456,
+    address: cities.sample
+    )
+  user.save!
+end
+
+puts "created 10 users!"
 
 10.times do
   skill = Skill.new(
