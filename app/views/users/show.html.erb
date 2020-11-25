@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-3">
       <div class="user_info">
-      <svg data-jdenticon-value="<%= current_user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
+      <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
       <div><%= @user.name %></div>
       <div><%= link_to "Add skill", new_skill_path %></div>
     </div>
