@@ -1,4 +1,4 @@
-.skill-item{
+.skill-item,.bookings-item{
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -31,4 +31,11 @@
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+}
+.bookings{
+  margin:0;
+  padding:0;
+}
+.title-bookings{
+  margin-top: 20px;
 }
