@@ -9,7 +9,7 @@
         <li class="card-skill-link">
           <%= link_to user_path(user) do %>
           <div class="card">
-            <img src="https://picsum.photos/200" class="card-img-right" alt="user-img">
+            <svg data-jdenticon-value="<%= user.id %>" class="avatar-user" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
             <div class="card-body">
               <h3><%= user.name %></h3>
               <p><strong>Price per day:</strong> €<%= user.skills.group_by(&:price_per_day).min[0]  %></p>
