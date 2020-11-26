@@ -4,16 +4,30 @@
       <div class="user_info">
         <%#= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
         <% if @user == current_user  %>
-        <div class="profile-img" style="background-image: url(<%= cl_image_path @user.photo.key, :gravity=>"face", :width=>418, :crop=>"thumb" %>);">
-        </div>
+          <div class="profile-img" style="background-image: url(<%= cl_image_path @user.photo.key, :gravity=>"face", :width=>418, :crop=>"thumb" %>);">
+            <% if @user == current_user %>
+              <div class="edit-user">
+                <%= link_to edit_user_registration_path(@user)  do%>
+                <i class="fas fa-user-edit"></i>
+                <% end %>
+              </div>
+              <div class="add-skill-btn">
+                <%= link_to new_skill_path, class: "add-skill-link" do%>
+                <i class="fas fa-plus-circle"></i> Skill
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         <% else %>
-      <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
-      <% end %>
-      <div><%= @user.name %></div>
-      <% if @user == current_user %>
-      <div><%= link_to "Add skill", new_skill_path %></div>
-      <% end %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
+        <% end %>
+
+      <div class="bottom-user-info">
+        <br>
+        <div >
+          <%= @user.name %></div>
+      </div>
+
     </div>
   </div>
   <div class="col-9">
@@ -77,9 +91,6 @@
         </table>
       </div>
       <% end %>
-
-
-
       <% if !@user.skills.empty? %>
       <div class="bookings col-12">
         <table class="bookings-table">

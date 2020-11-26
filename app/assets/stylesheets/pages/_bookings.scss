@@ -63,4 +63,45 @@
   padding: 150px 0px;
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+.add-skill-btn{
+  position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: -10px;
+}
+.add-skill-btn a{
+  padding: 7px 11px;
+    background: white;
+    border-radius: 25px;
+    border: 2px solid #E57D4F;
+}
+.bottom-user-info{
+  border: 1px solid #E57D4F;
+    border-radius: 0 0 10px 10px;
+}
+.add-skill-link{
+  text-decoration: none;
+  color:grey;
+  &:hover{
+    text-decoration: none;
+    color: #508BDE;
+  }
+}
+.edit-user{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid #E57D4F;
+}
+.edit-user i{
+  color:grey;
+}
+.edit-user:hover i{
+    color: #508BDE;
 }
