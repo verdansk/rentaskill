@@ -1,6 +1,6 @@
 <div class="container-fluid grid-map">
   <div class="card-grid">
-  <h1 class="mt-5 ml-5 pl-4"> Results :</h1>
+  <h1 class="cat-callout"> Results :</h1>
       <% @users.each do |user| %>
         <% if !user.skills.empty? %>
           <%= link_to user_path(user), class: "cat-skill-card-link" do %>

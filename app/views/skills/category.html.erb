@@ -1,6 +1,6 @@
 <div class="container-fluid grid-map">
   <div class="card-grid">
-    <h1 class="mt-5 ml-5 pl-4">These folks ace <%= @category %></h1>
+    <h1 class="cat-callout">These folks ace <%= @category %></h1>
     <% @users.each do |user| %>
       <%= link_to user_path(user), class: "cat-skill-card-link" do %>
         <div class="cat-skill-card">

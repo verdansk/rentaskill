@@ -9,6 +9,8 @@
   grid-template-columns: 1fr;
   margin-top: 66px;
   align-items: start;
+  width: 100%;
+  margin: 0 auto;
 }
 
  .card-grid li {
@@ -28,4 +30,48 @@
 
 .container-fluid{
   padding-right: 0px;
+}
+
+// Small devices no map
+@media (max-width: 576px) {
+  .grid-map {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .map-container {
+    display: none;
+  }
+}
+
+// Below 1180, the maps gets placed below the cards
+@media (max-width: 1180px) {
+  .grid-map {
+    display: block;
+  }
+  #map {
+      width: 100%;
+  }
+}
+
+// Below 1400 px map gets 100% width and slides with screen width.
+@media (max-width: 1399px) {
+  .cat-callout {
+    margin-top: 66px;
+    font-size: 2.3rem;
+  }
+  #map {
+    width: 100%;
+  }
+}
+
+
+// Set max width to 1400px and fix call-out at top of screen.
+@media (min-width: 1400px) {
+    .grid-map {
+    width:  1400px;
+  }
+    .cat-callout {
+    margin-top: 66px;
+    font-size: 2.3rem;
+  }
 }
