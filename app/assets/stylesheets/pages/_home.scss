@@ -18,11 +18,13 @@ body {
   height:40vh;
   background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6');
   background-size: cover;
+
+  h2{
+  margin-bottom: 50px;
+  }
 }
 
-h2{
-  margin-bottom: 50px;
-}
+
 
 #mainSearch{
   font-family: 'Nanum Gothic Coding', monospace;
@@ -31,7 +33,7 @@ h2{
 
 
 
-form {
+#main-form {
   display: flex;
   justify-content: center;
   width: 50%;
