@@ -54,6 +54,7 @@ class SkillsController < ApplicationController
     @skills.each do |skill|
       @users << User.find(skill.user_id)
     end
+    # raise
     @markers = @users.map do |user|
       {
         lat: user.latitude,
