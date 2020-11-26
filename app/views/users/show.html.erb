@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-3">
       <div class="user_info">
-      <%#= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
-      <% if current_user.photo.attached? %>
-        <div class="profile-img" style="background-image: url(<%= cl_image_path current_user.photo.key, :gravity=>"face", :width=>418, :crop=>"thumb" %>);">
+        <%#= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+        <% if current_user.photo.attached? %>
+        <div class="profile-img" style="background-image: url(<%= cl_image_path @user.photo.key, :gravity=>"face", :width=>418, :crop=>"thumb" %>);">
         </div>
-      <% else %>
-        <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
+        <% else %>
+      <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
       <% end %>
       <div><%= @user.name %></div>
       <% if @user == current_user %>
@@ -17,40 +17,86 @@
     </div>
   </div>
   <div class="col-9">
-      <div class="row">
-        <div class="col-12">
-          <div class="container-fluid">
-          </div>
-          <div class="row">
-            <% @user.skills.each do |skill| %>
-            <div class="<%=@user != current_user ? 'col-12' : 'col-3' %> skill-item justify-content-between ">
-              <div class="skill-title"><%= skill.name %></div>
-              <% if @user == current_user %>
-              <%= link_to skill_path(skill),
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } do %>
-                  <i class="far fa-minus-square icon-delete-skill"></i>
-                  <% end %>
-              <% end %>
-              <% if @user != current_user %>
-              <%#= link_to "Book", new_skill_booking_path(skill) %>
-              <%= render "bookings/form", skill: skill, booking: @new_booking %>
-              <% end %>
-            </div>
-            <% end %>
-          </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="container-fluid">
         </div>
-        <% if @user == current_user %>
-        <div class="col-12 title-bookings">Your bookings</div>
-        <div class="bookings col-12">
-          <% @bookings.each do |booking| %>
-          <div class="bookings-item">
-            <div> <%= "Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}"%> </div>
+        <div class="row">
+          <% @user.skills.each do |skill| %>
+          <div class="<%=@user != current_user ? 'col-12' : 'col-3' %> skill-item justify-content-between ">
+            <div class="skill-title"><%= skill.name %></div>
+            <% if @user == current_user %>
+            <%= link_to skill_path(skill),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } do %>
+            <i class="far fa-minus-square icon-delete-skill"></i>
+            <% end %>
+            <% end %>
+            <% if @user != current_user %>
+            <%#= link_to "Book", new_skill_booking_path(skill) %>
+            <%= render "bookings/form", skill: skill, booking: @new_booking %>
+            <% end %>
           </div>
           <% end %>
         </div>
-        <% end %>
       </div>
+      <%# if @user == current_user %>
+      <div class="col-12 title-bookings">Your bookings</div>
+      <div class="bookings col-12">
+        <% @bookings.each do |booking| %>
+        <div class="bookings-item">
+          <div>
+            <%= cl_image_tag booking.skill.user.photo.key, :gravity=>"face", :width=>50, :height =>50, :crop=>"thumb",class: "avatar" %>
+          <%= "You booked: #{booking.skill.user.name} Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}    Status:#{booking.status}"%> </div>
+        </div>
+        <% end %>
+        <%# raise %>
+      </div>
+      <div class="col-12">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>You booked</th>
+              <th>From</th>
+              <th>to</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user.skills.each do |skill| %>
+            <% skill.bookings.each do |booking| %>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <%= cl_image_tag booking.user.photo.key, :gravity=>"face", :width=>35, :height =>35, :crop=>"thumb",class: "avatar mx-2" %>
+                  <div>
+                    <div>
+                      <%= booking.user.name %>
+                    </div>
+                    <div>
+                      <%= skill.name %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><%= booking.date_start %></td>
+              <td><%= booking.date_end %></td>
+              <td> <div class="<%= booking.status %>"><%= booking.status %></div></td>
+              <td>
+                <div class="d-flex">
+                  <%= link_to "accept", accept_booking_path(booking) %>
+                  <%= link_to "decline", decline_booking_path(booking) %>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%# end %>
     </div>
+  </div>
 </div>
 </div>

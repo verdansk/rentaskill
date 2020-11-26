@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+
+.bookings-table{
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.bookings-table thead{
+  font-family: 'Comfortaa', cursive;
+  background-color:#E78659;
+}
+
+.bookings-table th{
+  padding: 20px 10px;
+}
+
+.bookings-table th:first-child{
+  border-radius:10px 0 0 0;
+}
+.bookings-table th:last-child{
+  border-radius:0 10px 0 0;
+}
+
+.bookings-table td{
+  background-color:#FFFFFF;
+  padding: 20px 10px;
+}
+.bookings-table td{
+  border-top: 1px solid #E6EBEF;
+}
+.bookings-table tr:last-child td:first-child{
+  border-radius:0 0 0 10px;
+}
+.bookings-table tr:last-child  td:last-child{
+  border-radius:0 0 10px 0;
+}
+.accepted{
+  background-color: #D7F5EA;
+  border-radius: 20px;
+  padding: 2px 0px;
+  opacity: 0.8;
+}
+
+.pending{
+  background-color: #FBF8DE;
+  border-radius: 20px;
+  padding: 2px 0px;
+  opacity: 0.8;
+}
+.declined{
+  background-color: #FBBEA4;
+  border-radius: 20px;
+  padding: 2px 0px;
+  opacity: 0.8;
+}
