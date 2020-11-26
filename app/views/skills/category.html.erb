@@ -1,8 +1,45 @@
 <div class="container-fluid">
 
   <h1 class="mt-5 ml-5 pl-4">These folks ace <%= @category %></h1>
-  <div class="grid-map">
 
+      <div class="cat-skill-card">
+        <div class="cat-skill-card-top">
+          <!-- Test a real picture -->
+            <svg class="cat-skill-card-avatar" data-jdenticon-value="<%#= user.id %>"></svg>
+          <div class="cat-skill-card-description">
+            <h3 class="cat-skill-card-name">Name</h3>
+            <p class="cat-skill-card-category">Category</p>
+            <i class="fas fa-star cat-skill-card-star"></i>
+            <i class="fas fa-star cat-skill-card-star"></i>
+            <i class="fas fa-star cat-skill-card-star"></i>
+            <i class="fas fa-star cat-skill-card-star"></i>
+            <i class="fas fa-star cat-skill-card-star"></i>
+          </div>
+          <div class="cat-skill-card-price">
+            <p class="cat-skill-card-margin">prices from:</p>
+            <div class="cat-skill-card-price-bottom">
+              <i class="fas fa-euro-sign cat-skill-card-euro"></i>
+              <p class="cat-skill-card-price">90,-</p>
+            </div>
+          </div>
+        </div>
+        <div class="cat-skill-card-bottom">
+          <div class="cat-skill-card-language">
+            <p class="">HTML</p>
+            <p class="">HTML</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+  <div class="grid-map">
     <ul class="card-grid">
       <% @users.each do |user| %>
 

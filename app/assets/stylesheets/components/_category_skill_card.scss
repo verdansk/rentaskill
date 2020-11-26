@@ -1,0 +1,74 @@
+.cat-skill-card {
+  border-radius: 10px;
+  // Change This once working
+  height: 150px;
+  margin-bottom: 100px;
+  width: 650px;
+  background-color: white;
+}
+
+.cat-skill-card-top {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.cat-skill-card-avatar {
+  border-radius: 50%;
+  width: 80px;
+  margin-right: 10px;
+}
+
+.cat-skill-card-description {
+  flex-grow: 4;
+}
+
+.cat-skill-card-margin {
+margin: 0px;
+}
+
+.cat-skill-card-name {
+margin: 0px;
+font-weight: 700;
+}
+
+.cat-skill-card-category {
+margin: 5px 5px 0px 5px;
+}
+
+.cat-skill-card-star {
+color: gold;
+margin-left: 5px;
+}
+
+.cat-skill-card-review {
+margin: 0px;
+}
+
+.cat-skill-card-price {
+margin: 0px;
+font-size: 1.5em;
+padding: 0px 10px;
+}
+
+.cat-skill-card-price-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cat-skill-card-euro {
+  font-size: 2em;
+}
+
+.cat-skill-card-bottom {
+  background-color: #efefef;
+}
+
+.cat-skill-card-language {
+  border-radius: 10px;
+  height: 20px;
+  padding: 10px;
+  display: flex;
+}
