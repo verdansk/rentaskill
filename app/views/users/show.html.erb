@@ -3,7 +3,7 @@
     <div class="col-3">
       <div class="user_info">
         <%#= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
-        <% if current_user.photo.attached? %>
+        <% if @user == current_user  %>
         <div class="profile-img" style="background-image: url(<%= cl_image_path @user.photo.key, :gravity=>"face", :width=>418, :crop=>"thumb" %>);">
         </div>
         <% else %>
@@ -40,23 +40,52 @@
           <% end %>
         </div>
       </div>
-      <%# if @user == current_user %>
+      <% if @user == current_user %>
       <div class="col-12 title-bookings">Your bookings</div>
       <div class="bookings col-12">
-        <% @bookings.each do |booking| %>
-        <div class="bookings-item">
-          <div>
-            <%= cl_image_tag booking.skill.user.photo.key, :gravity=>"face", :width=>50, :height =>50, :crop=>"thumb",class: "avatar" %>
-          <%= "You booked: #{booking.skill.user.name} Starts: #{booking.date_start} - End: #{booking.date_end}   Total price:#{booking.price}    Status:#{booking.status}"%> </div>
-        </div>
-        <% end %>
-        <%# raise %>
+        <table class="bookings-table">
+          <thead class="i-booked">
+            <tr>
+              <th>You booked</th>
+              <th>From</th>
+              <th>to</th>
+              <th>Status</th>
+              <th>Total Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @bookings.each do |booking| %>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center"><%= cl_image_tag booking.skill.user.photo.key, :gravity=>"face", :width=>50, :height =>50, :crop=>"thumb",class: "avatar mx-2" %>
+                  <div class="user-info">
+                    <div class="user-info-name">
+                      <%= booking.skill.user.name %>
+                    </div>
+                    <div class="user-info-skill">
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><%= booking.date_start %></td>
+              <td><%= booking.date_end %></td>
+              <td> <div class="<%= booking.status %>"><%= booking.status %></div></td>
+              <td> <%= booking.price %> </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
-      <div class="col-12">
+      <% end %>
+
+
+
+      <% if !@user.skills.empty? %>
+      <div class="bookings col-12">
         <table class="bookings-table">
           <thead>
             <tr>
-              <th>You booked</th>
+              <th>Want your skill</th>
               <th>From</th>
               <th>to</th>
               <th>Status</th>
@@ -65,16 +94,21 @@
           </thead>
           <tbody>
             <% @user.skills.each do |skill| %>
+            <% if skill.bookings.empty? %>
+            <tr>
+              <td>You haven't been booked yet</td>
+            </tr>
+            <% else %>
             <% skill.bookings.each do |booking| %>
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <%= cl_image_tag booking.user.photo.key, :gravity=>"face", :width=>35, :height =>35, :crop=>"thumb",class: "avatar mx-2" %>
-                  <div>
-                    <div>
-                      <%= booking.user.name %>
+                  <%= cl_image_tag booking.user.photo.key, :gravity=>"face", :width=>30, :height =>30, :crop=>"thumb",class: "avatar-sm mx-2" %>
+                  <div class="user-info">
+                    <div class="user-info-name">
+                      <%= booking.user.name.capitalize %>
                     </div>
-                    <div>
+                    <div class="user-info-skill">
                       <%= skill.name %>
                     </div>
                   </div>
@@ -84,18 +118,25 @@
               <td><%= booking.date_end %></td>
               <td> <div class="<%= booking.status %>"><%= booking.status %></div></td>
               <td>
+                <% if booking.status == 'pending' %>
                 <div class="d-flex">
-                  <%= link_to "accept", accept_booking_path(booking) %>
-                  <%= link_to "decline", decline_booking_path(booking) %>
+                  <%= link_to accept_booking_path(booking),class:"icon-accepted mr-3" do%>
+                  <i class="fas fa-check-circle"></i>
+                  <% end %>
+                  <%= link_to decline_booking_path(booking), class: "icon-decline" do %>
+                  <i class="fas fa-times-circle"></i>
+                  <% end %>
                 </div>
+                <% end %>
               </td>
             </tr>
+            <% end %>
             <% end %>
             <% end %>
           </tbody>
         </table>
       </div>
-      <%# end %>
+      <% end %>
     </div>
   </div>
 </div>

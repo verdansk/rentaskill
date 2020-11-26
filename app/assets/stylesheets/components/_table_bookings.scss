@@ -8,11 +8,15 @@
 }
 .bookings-table thead{
   font-family: 'Comfortaa', cursive;
-  background-color:#E78659;
+  background-color:#E57E4F;
+}
+.bookings-table .i-booked{
+  font-family: 'Comfortaa', cursive;
+  background-color:#508ADE;
 }
 
 .bookings-table th{
-  padding: 20px 10px;
+  padding: 10px 10px;
 }
 
 .bookings-table th:first-child{
@@ -24,7 +28,9 @@
 
 .bookings-table td{
   background-color:#FFFFFF;
-  padding: 20px 10px;
+  padding: 15px 10px;
+  font-size:14px;
+  font-weight: lighter;
 }
 .bookings-table td{
   border-top: 1px solid #E6EBEF;
@@ -39,7 +45,7 @@
   background-color: #D7F5EA;
   border-radius: 20px;
   padding: 2px 0px;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .pending{
@@ -48,9 +54,40 @@
   padding: 2px 0px;
   opacity: 0.8;
 }
+
 .declined{
-  background-color: #FBBEA4;
+  background-color: #FB5756;
   border-radius: 20px;
   padding: 2px 0px;
-  opacity: 0.8;
+  opacity: 0.9;
+}
+.icon-accepted{
+  color: #94F5B3;
+  font-size: 30px;
+  opacity: 0.7;
+  &:hover{
+    color: #50DE7D!important;
+    opacity: 0.9;
+  }
+}
+.icon-decline{
+  color: #FB5756;
+  font-size: 30px;
+  opacity: 0.7;
+  &:hover{
+    color: #FB5756!important;
+    opacity: 1;
+  }
+}
+.user-info{
+  text-align:left;
+}
+.user-info .user-info-skill{
+  font-weight: lighter;
+  font-style: italic;
+  font-size:12px;
+}
+.user-info .user-info-name{
+  font-weight: lighter;
+  font-size:14px;
 }
