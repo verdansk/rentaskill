@@ -1,34 +1,52 @@
 <div class="container-fluid grid-map">
-
-<div>
-  <h1 class="ml-5 pl-4"> Results :</h1>
-    <ul class="card-grid">
+  <div class="card-grid">
+  <h1 class="mt-5 ml-5 pl-4"> Results :</h1>
       <% @users.each do |user| %>
-
-      <li>
         <% if !user.skills.empty? %>
-        <%= link_to user_path(user) do %>
-        <div class="card">
-           <svg data-jdenticon-value="<%= user.id %>" class="avatar-user" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
-          <div class="card-body">
-            <h3 class="link-black"> <%= user.name %></h3>
-            <p class="link-black"> <strong>Price per day from :</strong> € <%= user.skills.group_by(&:price_per_day).min[0]  %>  €</p>
-          </div>
-        </div>
+          <%= link_to user_path(user), class: "cat-skill-card-link" do %>
+            <div class="cat-skill-card">
+              <div class="cat-skill-card-top">
+              <!-- Test a real picture -->
+                <svg class="cat-skill-card-avatar" data-jdenticon-value="<%= user.id %>"></svg>
+                <div class="cat-skill-card-description">
+                  <h3 class="cat-skill-card-name"><%= user.name %></h3>
+                  <% user.skills.first(1).each do |skill| %>
+                  <p class="cat-skill-card-category"><%= skill.category %></p>
+                  <% end  %>
+                  <i class="fas fa-star cat-skill-card-star"></i>
+                  <i class="fas fa-star cat-skill-card-star"></i>
+                  <i class="fas fa-star cat-skill-card-star"></i>
+                  <i class="fas fa-star cat-skill-card-star"></i>
+                  <i class="fas fa-star cat-skill-card-star"></i>
+                </div>
+                <div>
+                  <p class="cat-skill-card-price">starting at</p>
+                  <div class="cat-skill-card-price-bottom">
+                    <i class="fas fa-euro-sign cat-skill-card-euro"></i>
+                    <% user.skills.first(1).each do |skill| %>
+                    <p class="cat-skill-card-amount"> <%= skill.price_per_day %></p>
+                    <% end %>
+                  </div>
+                  <p class="cat-skill-card-price">p/day</p>
+                </div>
+              </div>
+              <div class="cat-skill-card-bottom">
+                <div class="cat-skill-card-language">
+                  <% user.skills.first(3).each do |skill| %>
+                  <p class="cat-skill-card-language-item"><%= skill.name %></p>
+                  <% end  %>
+                </div>
+              </div>
+            </div>
+          <% end  %>
         <% end %>
-        <% end %>
-      </li>
-
       <% end %>
-    </ul>
-</div>
-
-<div class="map-container">
-    <div id="map"
-     style="width: 700px; height: 100vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-</div>
-
+    <div class="map-container">
+        <div id="map"
+         style="width: 700px; height: 100vh; top: 66px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
 </div>
