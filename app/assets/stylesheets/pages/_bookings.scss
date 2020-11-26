@@ -40,6 +40,7 @@
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+  overflow: hidden;
 }
 .bookings{
   margin:0;
@@ -53,4 +54,9 @@
   position: absolute;
     right: 10px;
     top: 10px;
+}
+.profile-img{
+  padding: 150px 0px;
+  background-position: center;
+  background-size: cover;
 }
