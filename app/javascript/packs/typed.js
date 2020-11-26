@@ -53,3 +53,5 @@ $('.submit').click(function(e){
   e.preventDefault();
   placeholder();
 });
+
+// export { printLetter };

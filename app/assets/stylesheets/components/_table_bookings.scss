@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+
+.bookings-table{
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.bookings-table thead{
+  font-family: 'Comfortaa', cursive;
+  background-color:#E57E4F;
+}
+.bookings-table .i-booked{
+  font-family: 'Comfortaa', cursive;
+  background-color:#508ADE;
+}
+
+.bookings-table th{
+  padding: 10px 10px;
+}
+
+.bookings-table th:first-child{
+  border-radius:10px 0 0 0;
+}
+.bookings-table th:last-child{
+  border-radius:0 10px 0 0;
+}
+
+.bookings-table td{
+  background-color:#FFFFFF;
+  padding: 15px 10px;
+  font-size:14px;
+  font-weight: lighter;
+}
+.bookings-table td{
+  border-top: 1px solid #E6EBEF;
+}
+.bookings-table tr:last-child td:first-child{
+  border-radius:0 0 0 10px;
+}
+.bookings-table tr:last-child  td:last-child{
+  border-radius:0 0 10px 0;
+}
+.accepted{
+  background-color: #D7F5EA;
+  border-radius: 20px;
+  padding: 2px 0px;
+  opacity: 1;
+}
+
+.pending{
+  background-color: #FBF8DE;
+  border-radius: 20px;
+  padding: 2px 0px;
+  opacity: 0.8;
+}
+
+.declined{
+  background-color: #FB5756;
+  border-radius: 20px;
+  padding: 2px 0px;
+  opacity: 0.9;
+}
+.icon-accepted{
+  color: #94F5B3;
+  font-size: 30px;
+  opacity: 0.7;
+  &:hover{
+    color: #50DE7D!important;
+    opacity: 0.9;
+  }
+}
+.icon-decline{
+  color: #FB5756;
+  font-size: 30px;
+  opacity: 0.7;
+  &:hover{
+    color: #FB5756!important;
+    opacity: 1;
+  }
+}
+.user-info{
+  text-align:left;
+}
+.user-info .user-info-skill{
+  font-weight: lighter;
+  font-style: italic;
+  font-size:12px;
+}
+.user-info .user-info-name{
+  font-weight: lighter;
+  font-size:14px;
+}

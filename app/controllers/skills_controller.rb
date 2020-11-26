@@ -50,13 +50,26 @@ class SkillsController < ApplicationController
   def category
     @category = params[:category]
     @users = []
-
-    @skills = Skill.all.where("category ILIKE ?", "%#{params[:category]}%")
+    @skills = Skill.all.where("category = ?", "#{params[:category]}")
     @skills.each do |skill|
       @users << User.find(skill.user_id)
     end
+    # raise
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+      }
+    end
     @users.uniq!
     # render :index
+  end
+
+  def destroy
+    @skill = Skill.find(params[:id])
+    @skill.destroy
+    redirect_to user_path(@skill.user)
   end
 
   private

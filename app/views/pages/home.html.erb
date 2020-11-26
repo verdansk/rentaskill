@@ -2,64 +2,57 @@
   <h2>Search for a skill</h2>
     <form action="/skills/search" method="GET" name="search">
       <div class="form-group">
-        <input type="text" id="mainSearch" name="search"/>
+        <input class="search" type="text" id="mainSearch"  name="search"/>
       </div>
       <button type="submit" class="btn btn-warning">Search now!</button>
     </form>
   </div>
 
 <div class="container">
-  <h1 class="card-call-out">Find Skilled People near you</h1>
-  <div class="cardholder">
-  <%= link_to skills_category_path("front-end"), class: "card-link" do %>
-    <div class="card-home">
-        <%= image_tag "https://source.unsplash.com/uo8Jfqdzs18", class: "card-img-top" %>
-        <div class="card-body">
-          <h3 class="card-title">Front-end</h3>
+  <h1 class="homepage-call-out">Find Skilled People near you</h1>
+
+  <div class="grid-cat-card">
+  <%= link_to skills_category_path("front-end"), class: "cat-card-link" do %>
+     <%= image_tag "https://source.unsplash.com/uo8Jfqdzs18", class: "cat-card-img" %>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">Front-end</h3>
           <p class="card-text">Find the finest front-end developers in your area.</p>
         </div>
-    </div>
   <% end  %>
 
 
-  <%= link_to skills_category_path("back-end"), class: "card-link" do %>
-    <div class="card-home">
-      <%= image_tag "https://source.unsplash.com/Bv2FCJoh8XM", class: "card-img-top" %>
-        <div class="card-body">
-          <h3 class="card-title">Back-end</h3>
+  <%= link_to skills_category_path("back-end"), class: "cat-card-link" do %>
+   <%= image_tag "https://source.unsplash.com/Bv2FCJoh8XM", class: "cat-card-img" %>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">Back-end</h3>
           <p class="card-text">Get in touch with the baddest back-end developers near you.</p>
         </div>
-    </div>
   <% end %>
 
-  <%= link_to skills_category_path("full-stack"), class: "card-link" do %>
-    <div class="card-home">
-      <%= image_tag "https://source.unsplash.com/zrEkb4ILymM", class: "card-img-top" %>
-      <div class="card-body">
-        <h3 class="card-title">Full-stack</h3>
+  <%= link_to skills_category_path("full-stack"), class: "cat-card-link" do %>
+
+      <%= image_tag "https://source.unsplash.com/zrEkb4ILymM", class: "cat-card-img" %>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Full-stack</h3>
         <p class="card-text">Find full-stack developers to help you out.</p>
       </div>
-    </div>
   <% end %>
 
-  <%= link_to skills_category_path("data-science"), class: "card-link" do %>
-    <div class="card-home">
-      <%= image_tag "https://source.unsplash.com/pCqzMe04s8g", class: "card-img-top" %>
-      <div class="card-body">
-        <h3 class="card-title">Data-science</h3>
+  <%= link_to skills_category_path("data-science"), class: "cat-card-link" do %>
+   <%= image_tag "https://source.unsplash.com/pCqzMe04s8g", class: "cat-card-img" %>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Data-science</h3>
         <p class="card-text">Data labrats at your disposal.</p>
       </div>
-    </div>
   <% end %>
-  <%= link_to skills_category_path("product management"), class: "card-link" do %>
-    <div class="card-home">
-      <%= image_tag "https://source.unsplash.com/Oalh2MojUuk", class: "card-img-top" %>
-      <div class="card-body">
-        <h3 class="card-title">Product</h3>
+
+  <%= link_to skills_category_path("product management"), class: "cat-card-link" do %>
+   <%= image_tag "https://source.unsplash.com/Oalh2MojUuk", class: "cat-card-img" %>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Product</h3>
         <p class="card-text">Progress in your project with a Product Manager.</p>
       </div>
     </div>
   <% end %>
-  </div>
 </div>
 

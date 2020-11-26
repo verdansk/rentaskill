@@ -6,26 +6,28 @@ body {
   h1{
   color: black;
   }
-
 }
+
 .banner {
-  color: #DB683B;
+  color: white;
+  text-shadow: 1px 2px rgba(0,0,0,1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height:40vh;
-  background-image: url("bg.jpg");
+  background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6');
   background-size: cover;
-
-  h2{
-    margin-bottom: 50px;
-  }
-
-  #mainSearch{
-    font-family: 'Nanum Gothic Coding', monospace;
-  }
 }
+
+h2{
+  margin-bottom: 50px;
+}
+
+#mainSearch{
+  font-family: 'Nanum Gothic Coding', monospace;
+}
+
 
 
 
@@ -64,36 +66,7 @@ form {
   }
 }
 
-
-.cardholder {
-  margin-top:20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
-
-.card-home {
-  height: 100%;
-  border-radius: 10px;
-}
-
-.card-img-top {
-  border-radius: 10px 10px 0px 0px;
-  height: 250px;
-  object-fit: cover;
-}
-
-.card-link {
-  color: black;
-}
-
-.card-link:hover {
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
-  color: black;
-  border-radius: 10px;
-}
-
-.card-call-out {
+.homepage-call-out {
   font-size: 3em;
   text-align: center;
   margin: 20px 0px;
