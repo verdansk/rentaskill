@@ -3,9 +3,8 @@
 ////////////////////////////
 
 // your custome placeholder goes here!
-console.log('asdfasdf')
 var ph = "Enter a skill...",
-  searchBar = $('#search'),
+  searchBar = $('#mainSearch'),
   // placeholder loop counter
   phCount = 0;
 
