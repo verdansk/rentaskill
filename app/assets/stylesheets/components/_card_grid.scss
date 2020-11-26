@@ -20,7 +20,12 @@
     height: 175px;
   }
 }
-
+.grid-map {
+  display: flex;
+  justify-content: space-around;
+   align-items: flex-start;
+  margin-top: 20px;
+}
 .card-skill-link a:hover {
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
   color: black;
@@ -28,7 +33,6 @@
   text-decoration: none;
   // transition: box-shadow .2s ease-out;
   // zoom: 1.005;
-
 }
 
 .card {
@@ -45,8 +49,6 @@
 
 .link-black {
   color: black;
-
-
   border-radius: 10px;
 }
 
