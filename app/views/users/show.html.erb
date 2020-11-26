@@ -10,7 +10,6 @@
         <svg data-jdenticon-value="<%= @user.id %>" class="" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
       <% end %>
       <div><%= @user.name %></div>
-
       <% if @user == current_user %>
       <div><%= link_to "Add skill", new_skill_path %></div>
       <% end %>
