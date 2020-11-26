@@ -1,8 +1,24 @@
 <%= link_to user_path(user) do %>
-<div>
-  <h2><%= user.name %></h2>
-  <p> Address :<%= user.address %></p>
-  <p> Price from : <%= user.skills.group_by(&:price_per_day).min[0]  %></p>
+<div class="info-window">
+  <div class="info-pic">
+  <br>
+  <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, :width=>150, :height =>150, id: "navbarDropdown", :data => { :toggle => 'dropdown' }, :aria => { :hashpopup => 'true' , :expanded => 'false' }  %>
+  <% else %>
+    <svg data-jdenticon-value="<%= user.id %>"></svg>
+  <% end %>
+  </div>
+
+  <div>
+    <br>
+  <h2 class="info-header"><%= user.name %></h2>
+  <p class="info-text"> Address : <%= user.address %></p>
+  <p class="info-text"> Price from : € <%= user.skills.group_by(&:price_per_day).min[0]  %></p>
+  <p class="info-text"> Specialties: <%  user.skills(&:name).each do |skill| %>
+   | <%= skill[:name] %> € <%= skill[:price_per_day] %> |
+  <% end %> </p>
+</div>
+
 </div>
 
 <% end %>

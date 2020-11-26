@@ -1,11 +1,10 @@
+<div class="container-fluid grid-map">
 
-<div class="container-fluid">
-
-  <h1 class="mt-5 ml-5 pl-4"> Results :</h1>
-  <div class="grid-map">
-
+<div>
+  <h1 class="ml-5 pl-4"> Results :</h1>
     <ul class="card-grid">
       <% @users.each do |user| %>
+
       <li>
         <% if !user.skills.empty? %>
         <%= link_to user_path(user) do %>
@@ -13,7 +12,7 @@
            <svg data-jdenticon-value="<%= user.id %>" class="avatar-user" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
           <div class="card-body">
             <h3 class="link-black"> <%= user.name %></h3>
-            <p class="link-black"> <strong>Price per day from :</strong> <%= user.skills.group_by(&:price_per_day).min[0]  %>  €</p>
+            <p class="link-black"> <strong>Price per day from :</strong> € <%= user.skills.group_by(&:price_per_day).min[0]  %>  €</p>
           </div>
         </div>
         <% end %>
@@ -22,13 +21,14 @@
 
       <% end %>
     </ul>
+</div>
 
+<div class="map-container">
     <div id="map"
-     style="width: 50%; height: 600px;"
+     style="width: 700px; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-
-  </div>
+</div>
 
 </div>
