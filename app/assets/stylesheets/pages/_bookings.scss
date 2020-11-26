@@ -1,4 +1,4 @@
-.skill-item,.bookings-item{
+.skill-item,.bookings-item {
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -7,34 +7,38 @@
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.skill-item{
+
+.skill-item {
   position: relative;
 }
-.skill-item a{
+
+.skill-item a {
   color:grey;
   &:hover{
     color:#035ac1;
   }
 }
 
-.skill-item form{
+.skill-item form {
   display: flex;
     align-items: flex-end;
 }
 
-.skill-item form .form-group{
+.skill-item form .form-group {
   margin-bottom: 0;
 }
 
-.book-skill-btn{
+.book-skill-btn {
   padding: 5px 10px;
   margin: 0px 5px;
 
 }
-.skill-title{
+
+.skill-title {
   margin-right: 30px;
 }
-.user_info{
+
+.user_info {
   margin-top: 20px;
   border-radius: 10px;
   background-color: white;
@@ -46,11 +50,11 @@
   margin: 15px 0;
   padding: 0;
 }
-.title-bookings{
+.title-bookings {
   margin-top: 20px;
 }
 
-.icon-delete-skill{
+.icon-delete-skill {
   position: absolute;
     right: 10px;
     top: 10px;
