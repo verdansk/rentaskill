@@ -33,49 +33,7 @@ body {
   width: 25%;
 }
 
-.cardholder {
-  margin-top:20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
-
-.card-home {
-  height: 100%;
-  border-radius: 10px;
-}
-
-.card-img-top {
-  border-radius: 10px 10px 0px 0px;
-  height: 250px;
-  object-fit: cover;
-}
-
-.card-link {
-  color: black;
-  margin-left: 0px;
-}
-
-.card-link {
-  color: black;
-  margin-left: 0px;
-}
-
-.card-link:hover {
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
-  color: black;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-.card:hover {
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
-  color: black;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-.card-call-out {
+.homepage-call-out {
   font-size: 3em;
   text-align: center;
   margin: 20px 0px;
