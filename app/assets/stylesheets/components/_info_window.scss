@@ -1,0 +1,29 @@
+.info-window {
+display: flex;
+width: 300px;
+padding: 0px;
+background: white;
+color: black;
+border: 2px solid black;
+flex-direction: column;
+align-content: center;
+height: 350px;
+}
+
+.mapboxgl-popup-content {
+padding: 0px;
+}
+
+.info-pic {
+
+}
+
+.info-header {
+  background: black;
+  color: white;
+
+}
+
+.info-text {
+  font-size: 15px;
+}
