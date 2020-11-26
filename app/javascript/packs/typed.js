@@ -54,4 +54,4 @@ $('.submit').click(function(e){
   placeholder();
 });
 
-export { printLetter };
+// export { printLetter };
