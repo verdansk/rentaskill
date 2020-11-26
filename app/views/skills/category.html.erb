@@ -1,12 +1,11 @@
 <div class="container-fluid grid-map">
-  <div>
+  <div class="card-grid">
     <h1 class="mt-5 ml-5 pl-4">These folks ace <%= @category %></h1>
-    <ul class="card-grid">
-      <% @users.each do |user| %>
-        <%= link_to user_path(user), class: "cat-skill-card-link" do %>
+    <% @users.each do |user| %>
+      <%= link_to user_path(user), class: "cat-skill-card-link" do %>
         <div class="cat-skill-card">
           <div class="cat-skill-card-top">
-            <!-- Test a real picture -->
+          <!-- Test a real picture -->
             <svg class="cat-skill-card-avatar" data-jdenticon-value="<%= user.id %>"></svg>
             <div class="cat-skill-card-description">
               <h3 class="cat-skill-card-name"><%= user.name %></h3>
@@ -18,7 +17,7 @@
               <i class="fas fa-star cat-skill-card-star"></i>
             </div>
             <div>
-               <p class="cat-skill-card-price">starting at</p>
+              <p class="cat-skill-card-price">starting at</p>
               <div class="cat-skill-card-price-bottom">
                 <i class="fas fa-euro-sign cat-skill-card-euro"></i>
                 <% user.skills.first(1).each do |skill| %>
@@ -35,29 +34,16 @@
               <% end  %>
             </div>
           </div>
-        <% end  %>
-      <% end %>
-    </ul>
+        </div>
+      <% end  %>
+    <% end %>
   </div>
 
-<div class="map-container">
+  <div class="map-container">
     <div id="map"
-     style="width: 700px; height: 100vh;"
+     style="width: 700px; height: 100vh; top: 66px"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 </div>
-
-</div>
-
-        <!-- <li class="card-skill-link"> -->
-          <%#= link_to user_path(user) do %>
-<!--           <div class="card">
-            <svg data-jdenticon-value="<%#= user.id %>" class="avatar-user" id="navbarDropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false"></svg>
-            <div class="card-body">
-              <h3><%#= user.name %></h3>
-              <p><strong>Price per day:</strong> €<%#= user.skills.group_by(&:price_per_day).min[0]  %></p>
-            </div -->
-          <!-- </div> -->
-          <%# end %>
-        <!-- </li> -->
