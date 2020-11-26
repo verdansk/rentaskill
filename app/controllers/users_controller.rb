@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @users = User.all
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-
   end
 
   def show

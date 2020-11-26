@@ -11,13 +11,17 @@
   </head>
 
   <body>
+    <div id="page-container">
+      <div id="content-wrap">
+
     <%= render 'shared/navbar' %>
     <%= yield %>
     <%= render 'shared/flashes' %>
-    <%= javascript_tag 'typed' %>
+    <%#= javascript_tag 'typed' %>
 
-    <%#= render 'shared/footer' %>
-
+    </div>
+    <%= render 'shared/footer' %>
+    </div>
     <!-- Script to render random Avatars -->
     <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.0.1" async></script>
   </body>
