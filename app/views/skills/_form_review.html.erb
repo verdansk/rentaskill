@@ -1,0 +1,5 @@
+<%= simple_form_for([user,review]) do |f| %>
+  <%= f.input :rating, as: :integer %>
+  <%= f.input :description, as: :text %>
+  <%= f.button :submit, value: "Add review" %>
+<% end %>

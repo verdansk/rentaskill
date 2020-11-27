@@ -83,8 +83,25 @@
 }
 .bottom-user-info{
   border: 1px solid #E57D4F;
-    border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+  padding-top: 15px;
 }
+
+.bottom-user-review {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.card-rating-code {
+  color: #E57D4F;
+  margin-left: 5px;
+}
+
+.bottom-user-review p {
+  margin-left: 5px;
+}
+
 .add-skill-link{
   text-decoration: none;
   color:grey;

@@ -26,7 +26,7 @@ cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem G
   user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
 end
 
-puts "created 10 users!"
+puts "created 25 users!"
 
 10.times do
   skill = Skill.new(
@@ -103,3 +103,11 @@ end
 
 puts "created 10 product management skills!"
 
+100.times do
+  review = Review.create!(
+    rating: rand(1..5),
+    description: "lorem ipsum",
+    user_id: rand(1..25),
+    )
+  review.save!
+end

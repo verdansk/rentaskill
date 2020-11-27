@@ -33,6 +33,7 @@ class SkillsController < ApplicationController
 
   def search
     @users = []
+    @score = []
     @skills = Skill.all.where("lower(name) LIKE ?", "%#{params["search"].downcase}%")
     @skills.each do |skill|
       @users << User.find(skill.user_id)
@@ -50,6 +51,7 @@ class SkillsController < ApplicationController
 
   def category
     @category = params[:category]
+    @score = []
     @users = []
     @skills = Skill.all.where("category = ?", "#{params[:category]}")
     @skills.each do |skill|
@@ -64,6 +66,19 @@ class SkillsController < ApplicationController
       }
     end
     @users.uniq!
+    # @new_review = Review.new
+    # @user = []
+    # @score = []
+    # @review_strip = @users.each do |user|
+    #   @user << user.reviews
+    # end
+    # @review_score = @user.each do |review|
+    #   @score << review.rating
+    # end
+    # if @score.count > 0
+    #   @rating = @score.sum / @score.count
+    # else @rating = 0
+    # end
     # render :index
   end
 
