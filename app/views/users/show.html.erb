@@ -2,8 +2,6 @@
   <div class="row booking-top-margin">
     <div class="col-3">
       <div class="user_info">
-        <%#= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
-        <% if @user == current_user && @user.photo.attached? %>
         <div class="profile-img" style="background-image: url(<%= cl_image_path @user.photo.key , :gravity=>"face", :width=>418, :crop=>"thumb" if @user.photo.attached? %>);">
           <% if @user == current_user %>
           <div class="edit-user">
@@ -18,23 +16,6 @@
           </div>
           <% end %>
         </div>
-        <% else %>
-      <div class="profile-img" style='background-image: url(<svg data-jdenticon-value="<%= @user.id %>" ></svg>)'>
-        <svg data-jdenticon-value="<%= @user.id %>" class="jdenticon-user" ></svg>
-    <% if @user == current_user %>
-    <div class="edit-user">
-      <%= link_to edit_user_registration_path(@user)  do%>
-      <i class="fas fa-user-edit"></i>
-      <% end %>
-    </div>
-    <div class="add-skill-btn">
-      <%= link_to new_skill_path, class: "add-skill-link" do%>
-      <i class="fas fa-plus-circle"></i> Skill
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <% end %>
   <div class="bottom-user-info">
     <br>
     <div >
@@ -188,6 +169,10 @@
         <% if skill.bookings.empty? %>
         <tr>
           <td>You haven't been booked yet</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <% else %>
         <% skill.bookings.each do |booking| %>
