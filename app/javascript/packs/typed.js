@@ -4,7 +4,7 @@
 
 // your custome placeholder goes here!
 var ph = "Enter a skill...",
-  searchBar = $('#mainSearch'),
+  searchBar = document.querySelectorAll('#mainSearch'),
   // placeholder loop counter
   phCount = 0;
 

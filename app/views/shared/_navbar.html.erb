@@ -1,8 +1,14 @@
 <div class="navbar fixed-top navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+    <%= image_tag "logo1.png" %><div class="mx-1">RentaSkill</div>
+  <% end %>
 
-      <%= image_tag "logo1.png" %><div class="mx-1">RentaSkill</div>
-    <% end %>
+  <form action="/skills/search" method="GET" name="search" id="nav-form">
+    <div class="form-group">
+      <input class="search" type="text" id="mainSearch"  name="search"/>
+    </div>
+    <button type="submit" class="btn btn-warning">Search now!</button>
+  </form>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
