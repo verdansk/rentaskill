@@ -1,0 +1,41 @@
+#content{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 75%;
+  margin: 50px auto;
+  border-radius: 25px;
+  box-shadow: 9px 9px 17px 4px rgba(114,114,114,0.9);
+  background-color: white;
+  border: 0.5px solid #DB683B;
+
+  form.simple_form {
+    margin: 10px auto;
+    width: 80%;
+  }
+}
+
+input.btn {
+  color: white;
+  background-color: #DB683B;
+  border: 1px solid #fefefe;
+}
+
+input.form-control, textarea.form-control, select.form-control{
+  border-radius: 5px;
+  border: 2px solid #DB683B;
+}
+
+input.form-control-file {
+  border-radius: 5px;
+  background-color: #fefefe;
+  color: #DB683B;
+  border: 2px solid #DB683B;
+}
+
+input[type=file]::-webkit-file-upload-button{
+  background-color: #DB683B;
+  border-radius: 25px;
+  color: white;
+  border: 1px solid #fefefe;
+  margin: 5px;
+}

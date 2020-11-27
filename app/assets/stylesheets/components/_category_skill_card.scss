@@ -124,6 +124,26 @@
   border-radius: 5px;
 }
 
+.review-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.review-btn-card {
+  background-color: #e47c4b;
+  border: none;
+  border-radius: 10px;
+}
+
+.review-btn-card:hover, .review-btn-card:focus, .review-btn-card:active {
+  color: #e47c4b;
+  background: white;
+  box-shadow: 0px 0px 0px 1px #e47c4b;
+  border-radius: 10px;
+}
+
 @media (max-width: 1200px) {
   .cat-skill-card-link:first-of-type {
     margin-top: 125px;
