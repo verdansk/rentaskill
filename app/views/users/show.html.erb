@@ -62,7 +62,7 @@
         <% end %>
         <% if @user != current_user %>
         <%#= link_to "Book", new_skill_booking_path(skill) %>
-        <%= render "bookings/form", skill: skill, booking: @new_booking %>
+        <%= render "bookings/form", skill: skill, booking: @new_booking%>
         <% end %>
       </div>
       <% end %>
