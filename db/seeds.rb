@@ -13,7 +13,7 @@ cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem G
 2.times do |city|
   name =  Faker::Name.name,
   user = User.create!(
-    name: name,
+    name: Faker::Name.name,
     email: Faker::Internet.email,
     password: 123456,
     address: cities[city]
