@@ -10,7 +10,7 @@ cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem G
 
 
 
-2.times do |city|
+25.times do |city|
   name =  Faker::Name.name,
   user = User.create!(
     name: Faker::Name.name,
