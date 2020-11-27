@@ -59,7 +59,13 @@
 }
 
 .cat-skill-card-category {
-  margin: 5px 5px 0px 5px;
+  margin: 5px 5px 10px 5px;
+}
+
+.cat-skill-card-reviews {
+  display: flex;
+  align-items: baseline
+
 }
 
 .cat-skill-card-star {

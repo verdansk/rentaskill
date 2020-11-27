@@ -13,11 +13,21 @@
                   <% user.skills.first(1).each do |skill| %>
                   <p class="cat-skill-card-category"><%= skill.category %></p>
                   <% end  %>
-                  <i class="fas fa-star cat-skill-card-star"></i>
-                  <i class="fas fa-star cat-skill-card-star"></i>
-                  <i class="fas fa-star cat-skill-card-star"></i>
-                  <i class="fas fa-star cat-skill-card-star"></i>
-                  <i class="fas fa-star cat-skill-card-star"></i>
+                <div class="cat-skill-card-reviews">
+                  <% user.reviews.each do |review| %>
+                    <% @score << review.rating %>
+                  <% end  %>
+                    <% if @score.count > 0 %>
+                      <% @rating = @score.sum / @score.count %>
+                        <% @rating.times do  %>
+                        <i class="fas fa-code card-rating-code"></i>
+                        <% end %>
+                        <p class="cat-skill-card-category">Out of 5</p>
+                    <% else %>
+                      <p>No reviews yet</p>
+                    <% end  %>
+                    <% @score = []  %>
+                </div>
                 </div>
                 <div>
                   <p class="cat-skill-card-price">starting at</p>
