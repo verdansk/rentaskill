@@ -45,6 +45,7 @@ class SkillsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { user: user })
       }
     end
+    @users.uniq!
     render :index
   end
 
