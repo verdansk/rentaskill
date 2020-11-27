@@ -4,18 +4,23 @@
 # dataScience = ["python", "sql", "R", "scala"]
 # design = ["figma", "invision", "Adobe" ]
 # productManagament = ["scrum", "agile", "kanban"]
+require "open-uri"
 
 cities = ["Amsterdam", "Rotterdam", "Den Haag", "Apeldoorn", "Utrecht"]
 
 
 25.times do
+  name =  Faker::Name.name,
   user = User.create!(
-    name: Faker::Name.name,
+    name: name,
     email: Faker::Internet.email,
     password: 123456,
     address: cities.sample
     )
+
   user.save!
+  file = URI.open('https://source.unsplash.com/900x900/?portrait')
+  user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
 end
 
 puts "created 10 users!"
