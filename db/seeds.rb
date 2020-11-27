@@ -6,16 +6,17 @@
 # productManagament = ["scrum", "agile", "kanban"]
 require "open-uri"
 
-cities = ["Amsterdam", "Rotterdam", "Den Haag", "Apeldoorn", "Utrecht"]
+cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem Groningen", "Arnhem Leeuwarden", "Maastricht", "Zwolle Assen", "Middelburg", "Kralendijk", "Capelle aan den IJssel", "Delft Oegstgeest", "Gouda Schiedam", "Zoetermeer", "Hoorn Purmerend", "Veenendaal", "Maassluis", "Rijswijk"]
 
 
-25.times do
+
+25.times do |city|
   name =  Faker::Name.name,
   user = User.create!(
     name: name,
     email: Faker::Internet.email,
     password: 123456,
-    address: cities.sample
+    address: cities[city]
     )
 
   user.save!
