@@ -36,10 +36,18 @@ import { placeholder } from 'packs/typed';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
-  printLetter();
 });
 
-
+//reload on back
+window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted ||
+                         ( typeof window.performance != "undefined" &&
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
 // $(document).ready(function() {
 //     $('.js-example-basic-single').select2();
 // });
