@@ -6,11 +6,11 @@
 # productManagament = ["scrum", "agile", "kanban"]
 require "open-uri"
 
-cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem Groningen", "Arnhem Leeuwarden", "Maastricht", "Zwolle Assen", "Middelburg", "Kralendijk", "Capelle aan den IJssel", "Delft Oegstgeest", "Gouda Schiedam", "Zoetermeer", "Hoorn Purmerend", "Veenendaal", "Maassluis", "Rijswijk"]
+cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem Groningen", "Arnhem", "Maastricht", "Zwolle Assen", "Middelburg", "Hengelo", "Capelle aan den IJssel", "Delft", "Gouda", "Zoetermeer", "Venlo", "Veenendaal", "Maassluis", "Rijswijk","Dordrecht","Oud-Beijerland","Bergschenhoek","Hoofddorp","Delft","Hardinxveld-Giessendam","Etten-Leur","Oosterhout"]
 
 
 
-25.times do |city|
+2.times do |city|
   name =  Faker::Name.name,
   user = User.create!(
     name: name,
@@ -20,6 +20,8 @@ cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem G
     )
 
   user.save!
+  # file = URI.open('https://source.unsplash.com/900x900/?portrait')
+  # user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
   file = URI.open('https://source.unsplash.com/900x900/?portrait')
   user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
 end
