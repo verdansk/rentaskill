@@ -7,7 +7,12 @@
             <div class="cat-skill-card">
               <div class="cat-skill-card-top">
               <!-- Test a real picture -->
-                <svg class="cat-skill-card-avatar" data-jdenticon-value="<%= user.id %>"></svg>
+                <!-- <svg class="cat-skill-card-avatar" data-jdenticon-value="<%= user.id %>"></svg> -->
+                <% if user.photo.attached? %>
+                  <%= cl_image_tag user.photo.key , :gravity=>"face", :width=>418, :crop=>"thumb", class: "cat-skill-card-avatar" if user.photo.attached? %>
+                <% else %>
+                  <svg class="cat-skill-card-avatar" data-jdenticon-value="<%= user.id %>"></svg>
+                <% end %>
                 <div class="cat-skill-card-description">
                   <h3 class="cat-skill-card-name"><%= user.name %></h3>
                   <% user.skills.first(1).each do |skill| %>

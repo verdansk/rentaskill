@@ -1,0 +1,21 @@
+.modal-add-skill{
+  border-radius: 15px;
+  font-family: 'Comfortaa', cursive;
+
+  .modal-header{
+    border-radius: 14px 14px 0 0;
+    background-color: #E57E4F;
+  }
+  h5{
+    color:white;
+  }
+}
+.modal-add-skill .form-control{
+    border: 0!important;
+    border-bottom: 1px solid lightgrey!important;
+    border-radius: 0!important;
+}
+
+.modal-add-skill .modal-body .form-group{
+  text-align: left!important;
+}

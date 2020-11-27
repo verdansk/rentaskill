@@ -13,7 +13,7 @@
             <% end %>
           </div>
           <div class="add-skill-btn">
-            <%= link_to new_skill_path, class: "add-skill-link" do%>
+            <%= link_to new_skill_path, class: "add-skill-link", :data => {:toggle => "modal", :target =>"#exampleModalCenter" } do%>
             <i class="fas fa-plus-circle"></i> Skill
             <% end %>
           </div>
@@ -43,6 +43,11 @@
     </div>
     <br>
   </div>
+
+<%= render 'modal-add-skill', skill: @new_skill %>
+
+
+
 </div>
 </div>
 <div class="col-9">
@@ -125,7 +130,7 @@
       <tbody>
         <tr>
           <td>
-            Go book you first dev
+            Go book you first developer
           </td>
           <td></td>
           <td></td>
@@ -140,7 +145,7 @@
   <% if current_user == @user %>
   <% if !@user.skills.empty? %>
   <div class="bookings col-12">
-    <table class="bookings-table">
+    <table class="bookings-table" >
       <thead>
         <tr>
           <th>Want your skill</th>
@@ -154,7 +159,11 @@
         <% @user.skills.each do |skill| %>
         <% if skill.bookings.empty? %>
         <tr>
-          <td>You haven't been booked yet</td>
+          <td>You haven't been booked yet!</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <% else %>
         <% skill.bookings.each do |booking| %>
@@ -196,7 +205,7 @@
   </div>
   <% else %>
   <div class="bookings col-12">
-    <table class="bookings-table">
+    <table class="bookings-table"  style="empty-cells: show;">
       <thead>
         <tr>
           <th>Want your skill</th>
@@ -207,13 +216,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>You don't have any booking requests YETTTTT!!!</td>
+        <td>
+            You haven't been booked yet!
+          </td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-        </tr>
       </tbody>
     </table>
   </div>
