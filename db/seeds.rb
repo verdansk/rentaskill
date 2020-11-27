@@ -4,18 +4,26 @@
 # dataScience = ["python", "sql", "R", "scala"]
 # design = ["figma", "invision", "Adobe" ]
 # productManagament = ["scrum", "agile", "kanban"]
+require "open-uri"
 
-cities = ["Amsterdam", "Rotterdam", "Den Haag", "Apeldoorn", "Utrecht"]
+cities = ["The Hague", "Amsterdam", "Rotterdam", "Utrecht Eindhoven", "Haarlem Groningen", "Arnhem", "Maastricht", "Zwolle Assen", "Middelburg", "Hengelo", "Capelle aan den IJssel", "Delft", "Gouda", "Zoetermeer", "Venlo", "Veenendaal", "Maassluis", "Rijswijk","Dordrecht","Oud-Beijerland","Bergschenhoek","Hoofddorp","Delft","Hardinxveld-Giessendam","Etten-Leur","Oosterhout"]
 
 
-25.times do
+
+25.times do |city|
+  name =  Faker::Name.name,
   user = User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     password: 123456,
-    address: cities.sample
+    address: cities[city]
     )
+
   user.save!
+  # file = URI.open('https://source.unsplash.com/900x900/?portrait')
+  # user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
+  file = URI.open('https://source.unsplash.com/900x900/?portrait')
+  user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
 end
 
 puts "created 10 users!"
