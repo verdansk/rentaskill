@@ -10,7 +10,8 @@
             <% end %>
           </div>
           <div class="add-skill-btn">
-            <%= link_to new_skill_path, class: "add-skill-link" do%>
+            <%= link_to new_skill_path, class: "add-skill-link", data: { toggle: "modal", target: "#exampleModalCenter" } do%>
+
             <i class="fas fa-plus-circle"></i> Skill
             <% end %>
           </div>
