@@ -1,6 +1,6 @@
 <div class="container-fluid grid-map">
   <div class="card-grid">
-  <h1 class="mt-5 ml-5 pl-4"> Results :</h1>
+  <h1 class="cat-callout"> Results :</h1>
       <% @users.each do |user| %>
         <% if !user.skills.empty? %>
           <%= link_to user_path(user), class: "cat-skill-card-link" do %>
@@ -44,7 +44,7 @@
     </div>
     <div class="map-container">
         <div id="map"
-         style="width: 700px; height: 100vh; top: 66px;"
+         style="height: 100vh; top: 66px;"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
