@@ -48,6 +48,17 @@ window.addEventListener( "pageshow", function ( event ) {
     window.location.reload();
   }
 });
+
+
+
+const path = /^\/(?:|index\.aspx?)$/i.test(location.pathname)
+if(path === true){
+  document.querySelector("#nav-form").style.display = 'none';
+}
+
+document.querySelector(".navbar-brand").addEventListener("click", e => {
+  window.location.assign("/");
+});
 // $(document).ready(function() {
 //     $('.js-example-basic-single').select2();
 // });
